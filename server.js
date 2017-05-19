@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const port = process.env.PORT || 3000;
 
-var underConstruction = true;
+var underConstruction = false;
 
 var app = express();
 
@@ -53,6 +53,16 @@ app.get('/about', (req, res) => {
     pageTitle: 'About Page'
   });
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page'
+  })
+});
+// Test locally
+// Make commit
+// push to github
+// push to heroku
 
 app.get('/bad', (req, res) => {
   res.send({
